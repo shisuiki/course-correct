@@ -80,15 +80,16 @@ work. Be direct, skeptical, and evidence-backed.
 3. **Audit against these concrete drift and bias failure modes:**
    - **Proxy / Spirit Drift:** Optimizing a local metric, milestone, or test
      while missing the underlying goal or violating the intended architecture.
-   - **Hardcoding & Megakernel Bias:** Baking task-, model-, or example-specific
-     arrangements into code/primitives where the goal calls for generality,
-     parameterization, composition, or search.
+   - **Hardcoding & Premature Specialization:** Baking narrow, one-off, or
+     example-specific logic into code where the goal calls for generality or
+     composability (or, conversely, over-engineering abstractions when a simple
+     direct solution was requested).
    - **Glue & Sunk-Cost Patching:** Layering adapters, bypass scripts, special
-     cases, or wrappers around a broken abstraction instead of fixing or
+     cases, or wrappers around a flawed abstraction instead of fixing or
      replacing the abstraction.
-   - **Silent Pruning & Heuristic Shortcuts:** Inserting arbitrary caps, greedy
-     cutoffs, whitelists, or early pruning that silently exclude better general
-     solutions.
+   - **Silent Shortcuts & Narrowing:** Introducing arbitrary limits, brittle
+     heuristics, silent fallbacks, or hardcoded whitelists that quietly drop
+     valid cases or mask failure modes.
    - **Evidence / Verification Theater:** Treating mocks, analytical models,
      unwired stubs, or narrow unit tests as end-to-end validation, or adding
      heavy process around an unvalidated core.
